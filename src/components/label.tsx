@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { TitleKey } from "./productSections/detailsSection/detailsSectionBlock";
 import { TLabelProps } from "./productSections/detailsSection/renderLabels";
 import { useEditDetailsContext } from "../contexts/editDetailsContext";
@@ -13,8 +12,6 @@ interface ILabelProps {
 
 const Label: React.FC<ILabelProps> = ({ title, item, additional, editing, className = "" }) => {
     const { editedProductDispatch } = useEditDetailsContext();
-
-    const spanRef = useRef<HTMLSpanElement>(null);
 
     function handleClick() {
         if (additional) {
@@ -37,7 +34,6 @@ const Label: React.FC<ILabelProps> = ({ title, item, additional, editing, classN
 
     return (
         <span
-            ref={spanRef}
             className={
                 `bg-gray-200 text-gray-500 hover:text-black cursor-default py-1 px-2 h-fit rounded-xl text-sm transition-colors 
                 ${additional ? "bg-green-400 !text-black hover:cursor-pointer hover:bg-red-500 hover:!text-white focus:bg-red-500 focus:!text-white" : ""} 

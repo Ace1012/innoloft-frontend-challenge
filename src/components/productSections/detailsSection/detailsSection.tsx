@@ -1,11 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectProduct } from "../../../store/store";
 import ProductSection from "../../productSection";
-import DetailsSectionBlock, { IDetailsSectionForwardProps } from "./detailsSectionBlock";
-
-export interface IDetailsForwardRefProps {
-    returnRefs(): (IDetailsSectionForwardProps | null)[]
-}
+import DetailsSectionBlock from "./detailsSectionBlock";
 
 interface IDetailsProps {
     editing?: boolean;
